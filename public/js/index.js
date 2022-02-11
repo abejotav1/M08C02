@@ -1,17 +1,17 @@
-window.onload = function(){
-    //JavaScript del Index
+window.addEventListener("load",function(){
     let container = document.querySelector('.container');
     let subtitulo = document.querySelector('.subtitulo');
     let destacado = document.querySelectorAll('p');
     let fondo = document.querySelector('body');
     let enlace = document.querySelector('a');
-    
+
+
     let nombre = prompt('Ingrese su nombre');
     console.log(nombre);
     if(nombre !=''){
         subtitulo.innerHTML += nombre;
     }else{
-        subtitulo.innerHTML += 'INVITADO';
+        subtitulo.innerHTML += ' INVITADO';
     }
         
     subtitulo.style.textTransform = 'uppercase';
@@ -28,7 +28,23 @@ window.onload = function(){
             destacado[i].classList.add('destacadoImpar');
         }
     }
-    
 
     container.style.display = 'block';
-}
+    
+    let logoDH = document.querySelector(".logo-DH");
+    let menuDH = document.querySelector("#menu")
+
+    logoDH.addEventListener("click",function(){
+        document.getElementById("menu").classList.toggle("mostrar");
+/*tambien se puede usar
+        menuDH.classList.toggle("mostrar");
+*/
+    })
+
+    menuDH.addEventListener("mouseleave",function(){
+        document.getElementById("menu").classList.toggle("mostrar");  
+    })
+
+  
+}) 
+
